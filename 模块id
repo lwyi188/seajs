@@ -1,9 +1,9 @@
 
-#685
+#685 https://github.com/seajs/seajs/issues/685
 define 手动指定 id 时，id 规则是自己定的，在 seajs 层面没有约定，一般希望是文件路径
 
 seajs 的 base 路径是 http://xx.com/path/to/js/
 
 那么，http://xx.com/path/to/js/a.js 的 id 就是 a
 
-http://xx.com/path/to/js/app/z.js 的 id 就是 aa/z
+http://xx.com/path/to/js/app/z.js 的 id 就是 app/z
