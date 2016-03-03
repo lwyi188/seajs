@@ -7,3 +7,19 @@ seajs 的 base 路径是 http://xx.com/path/to/js/
 那么，http://xx.com/path/to/js/a.js 的 id 就是 a
 
 http://xx.com/path/to/js/app/z.js 的 id 就是 app/z
+
+
+#https://github.com/seajs/seajs/issues/258
+模块标识是一个字符串，用来标识模块。在 require、 require.async 等加载函数中，第一个参数都是模块标识。
+
+Sea.js 中的模块标识是 CommonJS 模块标识 的超集:
+
+一个模块标识由斜线（/）分隔的多项组成。
+每一项必须是小驼峰字符串、 . 或 .. 。
+模块标识可以不包含文件后缀名，比如 .js 。
+模块标识可以是 相对 或 顶级 标识。如果第一项是 . 或 ..，则该模块标识是相对标识。
+顶级标识根据模块系统的基础路径来解析。
+相对标识相对 require 所在模块的路径来解析。
+注意，符合上述规范的标识肯定是 Sea.js 的模块标识，但 Sea.js 能识别的模块标识不需要完全符合以上规范。
+比如，除了大小写字母组成的小驼峰字符串，Sea.js 的模块标识字符串还可以包含下划线（_）和连字符（-），
+甚至可以是 http://、https://、file:/// 等协议开头的绝对路径。
